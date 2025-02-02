@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:pos="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos.ecore" xmlns:tcas="http:///uima/tcas.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:cas="http:///uima/cas.ecore" xmlns:tweet="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/pos/tweet.ecore" xmlns:morph="http:///de/tudarmstadt/ukp/dkpro/core/api/lexmorph/type/morph.ecore" xmlns:type="http:///de/tudarmstadt/ukp/clarin/webanno/api/type.ecore" xmlns:dependency="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/dependency.ecore" xmlns:type6="http:///de/tudarmstadt/ukp/dkpro/core/api/semantics/type.ecore" xmlns:type9="http:///de/tudarmstadt/ukp/dkpro/core/api/transform/type.ecore" xmlns:type8="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type.ecore" xmlns:type3="http:///de/tudarmstadt/ukp/dkpro/core/api/metadata/type.ecore" xmlns:type11="http:///org/dkpro/core/api/xml/type.ecore" xmlns:type4="http:///de/tudarmstadt/ukp/dkpro/core/api/ner/type.ecore" xmlns:type10="http:///org/dkpro/core/api/pdf/type.ecore" xmlns:type5="http:///de/tudarmstadt/ukp/dkpro/core/api/segmentation/type.ecore" xmlns:type2="http:///de/tudarmstadt/ukp/dkpro/core/api/coref/type.ecore" xmlns:type7="http:///de/tudarmstadt/ukp/dkpro/core/api/structure/type.ecore" xmlns:constituent="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/constituent.ecore" xmlns:chunk="http:///de/tudarmstadt/ukp/dkpro/core/api/syntax/type/chunk.ecore" xmi:version="2.0">
+    <cas:NULL xmi:id="0"/>
+    <type3:DocumentMetaData xmi:id="8" sofa="1" begin="0" end="233" language="x-unspecified" documentTitle="corzu.conll" documentId="corzu.conll" documentUri="admin/corzu.conll" collectionId="admin/corzu.conll" documentBaseUri="admin" isLastSegment="false"/>
+    <type5:Token xmi:id="19" sofa="1" begin="0" end="7" lemma="32" pos="37" order="0"/>
+    <type5:Token xmi:id="43" sofa="1" begin="8" end="10" lemma="56" pos="61" morph="67" order="0"/>
+    <type5:Token xmi:id="90" sofa="1" begin="11" end="15" lemma="103" pos="108" morph="114" order="0"/>
+    <type5:Token xmi:id="137" sofa="1" begin="16" end="19" lemma="150" pos="155" morph="161" order="0"/>
+    <type5:Token xmi:id="184" sofa="1" begin="20" end="29" lemma="197" pos="202" morph="208" order="0"/>
+    <type5:Token xmi:id="231" sofa="1" begin="30" end="33" lemma="244" pos="249" morph="255" order="0"/>
+    <type5:Token xmi:id="278" sofa="1" begin="34" end="38" lemma="291" pos="296" morph="302" order="0"/>
+    <type5:Token xmi:id="325" sofa="1" begin="39" end="56" lemma="338" pos="343" morph="349" order="0"/>
+    <type5:Token xmi:id="372" sofa="1" begin="57" end="58" lemma="385" pos="390" order="0"/>
+    <type5:Token xmi:id="396" sofa="1" begin="59" end="68" lemma="409" pos="414" morph="420" order="0"/>
+    <type5:Token xmi:id="443" sofa="1" begin="69" end="72" lemma="456" pos="461" morph="467" order="0"/>
+    <type5:Token xmi:id="490" sofa="1" begin="73" end="89" lemma="503" pos="508" morph="514" order="0"/>
+    <type5:Token xmi:id="537" sofa="1" begin="90" end="93" lemma="550" pos="555" order="0"/>
+    <type5:Token xmi:id="561" sofa="1" begin="94" end="97" lemma="574" pos="579" morph="585" order="0"/>
+    <type5:Token xmi:id="608" sofa="1" begin="98" end="111" lemma="621" pos="626" morph="632" order="0"/>
+    <type5:Token xmi:id="655" sofa="1" begin="112" end="117" lemma="668" pos="673" order="0"/>
+    <type5:Token xmi:id="679" sofa="1" begin="118" end="120" lemma="692" pos="697" morph="703" order="0"/>
+    <type5:Token xmi:id="726" sofa="1" begin="121" end="124" lemma="739" pos="744" morph="750" order="0"/>
+    <type5:Token xmi:id="773" sofa="1" begin="125" end="131" lemma="786" pos="791" morph="797" order="0"/>
+    <type5:Token xmi:id="820" sofa="1" begin="132" end="134" lemma="833" pos="838" order="0"/>
+    <type5:Token xmi:id="844" sofa="1" begin="135" end="136" lemma="857" pos="862" order="0"/>
+    <type5:Token xmi:id="868" sofa="1" begin="137" end="144" lemma="881" pos="886" order="0"/>
+    <type5:Token xmi:id="892" sofa="1" begin="145" end="148" lemma="905" pos="910" morph="916" order="0"/>
+    <type5:Token xmi:id="939" sofa="1" begin="149" end="156" lemma="952" pos="957" morph="963" order="0"/>
+    <type5:Token xmi:id="986" sofa="1" begin="157" end="164" lemma="999" pos="1004" morph="1010" order="0"/>
+    <type5:Token xmi:id="1033" sofa="1" begin="165" end="169" lemma="1046" pos="1051" order="0"/>
+    <type5:Token xmi:id="1057" sofa="1" begin="170" end="182" lemma="1070" pos="1075" morph="1081" order="0"/>
+    <type5:Token xmi:id="1104" sofa="1" begin="183" end="186" lemma="1117" pos="1122" order="0"/>
+    <type5:Token xmi:id="1128" sofa="1" begin="187" end="190" lemma="1141" pos="1146" morph="1152" order="0"/>
+    <type5:Token xmi:id="1175" sofa="1" begin="191" end="199" lemma="1188" pos="1193" morph="1199" order="0"/>
+    <type5:Token xmi:id="1222" sofa="1" begin="200" end="211" lemma="1235" pos="1240" morph="1246" order="0"/>
+    <type5:Token xmi:id="1269" sofa="1" begin="212" end="225" lemma="1282" pos="1287" morph="1293" order="0"/>
+    <type5:Token xmi:id="1316" sofa="1" begin="226" end="230" lemma="1329" pos="1334" morph="1340" order="0"/>
+    <type5:Token xmi:id="1363" sofa="1" begin="231" end="232" lemma="1376" pos="1381" order="0"/>
+    <type5:Lemma xmi:id="32" sofa="1" begin="0" end="7" value="während"/>
+    <type5:Lemma xmi:id="56" sofa="1" begin="8" end="10" value="du"/>
+    <type5:Lemma xmi:id="103" sofa="1" begin="11" end="15" value="du"/>
+    <type5:Lemma xmi:id="150" sofa="1" begin="16" end="19" value="die"/>
+    <type5:Lemma xmi:id="197" sofa="1" begin="20" end="29" value="Höhepunkt"/>
+    <type5:Lemma xmi:id="244" sofa="1" begin="30" end="33" value="die"/>
+    <type5:Lemma xmi:id="291" sofa="1" begin="34" end="38" value="Lust"/>
+    <type5:Lemma xmi:id="338" sofa="1" begin="39" end="56" value="entgegenschrauben"/>
+    <type5:Lemma xmi:id="385" sofa="1" begin="57" end="58" value=","/>
+    <type5:Lemma xmi:id="409" sofa="1" begin="59" end="68" value="schwellen"/>
+    <type5:Lemma xmi:id="456" sofa="1" begin="69" end="72" value="die"/>
+    <type5:Lemma xmi:id="503" sofa="1" begin="73" end="89" value="Klitorisschenkel"/>
+    <type5:Lemma xmi:id="550" sofa="1" begin="90" end="93" value="und"/>
+    <type5:Lemma xmi:id="574" sofa="1" begin="94" end="97" value="die"/>
+    <type5:Lemma xmi:id="621" sofa="1" begin="98" end="111" value="Schwellkörper"/>
+    <type5:Lemma xmi:id="668" sofa="1" begin="112" end="117" value="rings"/>
+    <type5:Lemma xmi:id="692" sofa="1" begin="118" end="120" value="um"/>
+    <type5:Lemma xmi:id="739" sofa="1" begin="121" end="124" value="die"/>
+    <type5:Lemma xmi:id="786" sofa="1" begin="125" end="131" value="Vagina"/>
+    <type5:Lemma xmi:id="833" sofa="1" begin="132" end="134" value="an"/>
+    <type5:Lemma xmi:id="857" sofa="1" begin="135" end="136" value=","/>
+    <type5:Lemma xmi:id="881" sofa="1" begin="137" end="144" value="wodurch"/>
+    <type5:Lemma xmi:id="905" sofa="1" begin="145" end="148" value="die"/>
+    <type5:Lemma xmi:id="952" sofa="1" begin="149" end="156" value="gesamt"/>
+    <type5:Lemma xmi:id="999" sofa="1" begin="157" end="164" value="Bereich"/>
+    <type5:Lemma xmi:id="1046" sofa="1" begin="165" end="169" value="noch"/>
+    <type5:Lemma xmi:id="1070" sofa="1" begin="170" end="182" value="empfindsam"/>
+    <type5:Lemma xmi:id="1117" sofa="1" begin="183" end="186" value="und"/>
+    <type5:Lemma xmi:id="1141" sofa="1" begin="187" end="190" value="für"/>
+    <type5:Lemma xmi:id="1188" sofa="1" begin="191" end="199" value="sexuell"/>
+    <type5:Lemma xmi:id="1235" sofa="1" begin="200" end="211" value="Stimulation"/>
+    <type5:Lemma xmi:id="1282" sofa="1" begin="212" end="225" value="empfänglich"/>
+    <type5:Lemma xmi:id="1329" sofa="1" begin="226" end="230" value="werden"/>
+    <type5:Lemma xmi:id="1376" sofa="1" begin="231" end="232" value="."/>
+    <pos:POS xmi:id="37" sofa="1" begin="0" end="7" PosValue="KOUS" coarseValue="KOUS"/>
+    <pos:POS xmi:id="61" sofa="1" begin="8" end="10" PosValue="PPER" coarseValue="PRO"/>
+    <pos:POS xmi:id="108" sofa="1" begin="11" end="15" PosValue="PPER" coarseValue="PRO"/>
+    <pos:POS xmi:id="155" sofa="1" begin="16" end="19" PosValue="ART" coarseValue="ART"/>
+    <pos:POS xmi:id="202" sofa="1" begin="20" end="29" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="249" sofa="1" begin="30" end="33" PosValue="ART" coarseValue="ART"/>
+    <pos:POS xmi:id="296" sofa="1" begin="34" end="38" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="343" sofa="1" begin="39" end="56" PosValue="VVFIN" coarseValue="V"/>
+    <pos:POS xmi:id="390" sofa="1" begin="57" end="58" PosValue="$," coarseValue="$,"/>
+    <pos:POS xmi:id="414" sofa="1" begin="59" end="68" PosValue="VVFIN" coarseValue="V"/>
+    <pos:POS xmi:id="461" sofa="1" begin="69" end="72" PosValue="ART" coarseValue="ART"/>
+    <pos:POS xmi:id="508" sofa="1" begin="73" end="89" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="555" sofa="1" begin="90" end="93" PosValue="KON" coarseValue="KON"/>
+    <pos:POS xmi:id="579" sofa="1" begin="94" end="97" PosValue="ART" coarseValue="ART"/>
+    <pos:POS xmi:id="626" sofa="1" begin="98" end="111" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="673" sofa="1" begin="112" end="117" PosValue="ADV" coarseValue="ADV"/>
+    <pos:POS xmi:id="697" sofa="1" begin="118" end="120" PosValue="APPR" coarseValue="PREP"/>
+    <pos:POS xmi:id="744" sofa="1" begin="121" end="124" PosValue="ART" coarseValue="ART"/>
+    <pos:POS xmi:id="791" sofa="1" begin="125" end="131" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="838" sofa="1" begin="132" end="134" PosValue="PTKVZ" coarseValue="PTKVZ"/>
+    <pos:POS xmi:id="862" sofa="1" begin="135" end="136" PosValue="$," coarseValue="$,"/>
+    <pos:POS xmi:id="886" sofa="1" begin="137" end="144" PosValue="PWAV" coarseValue="PWAV"/>
+    <pos:POS xmi:id="910" sofa="1" begin="145" end="148" PosValue="ART" coarseValue="ART"/>
+    <pos:POS xmi:id="957" sofa="1" begin="149" end="156" PosValue="ADJA" coarseValue="ADJA"/>
+    <pos:POS xmi:id="1004" sofa="1" begin="157" end="164" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="1051" sofa="1" begin="165" end="169" PosValue="ADV" coarseValue="ADV"/>
+    <pos:POS xmi:id="1075" sofa="1" begin="170" end="182" PosValue="ADJD" coarseValue="ADV"/>
+    <pos:POS xmi:id="1122" sofa="1" begin="183" end="186" PosValue="KON" coarseValue="KON"/>
+    <pos:POS xmi:id="1146" sofa="1" begin="187" end="190" PosValue="APPR" coarseValue="PREP"/>
+    <pos:POS xmi:id="1193" sofa="1" begin="191" end="199" PosValue="ADJA" coarseValue="ADJA"/>
+    <pos:POS xmi:id="1240" sofa="1" begin="200" end="211" PosValue="NN" coarseValue="N"/>
+    <pos:POS xmi:id="1287" sofa="1" begin="212" end="225" PosValue="ADJD" coarseValue="ADV"/>
+    <pos:POS xmi:id="1334" sofa="1" begin="226" end="230" PosValue="VAFIN" coarseValue="V"/>
+    <pos:POS xmi:id="1381" sofa="1" begin="231" end="232" PosValue="$." coarseValue="$."/>
+    <morph:MorphologicalFeatures xmi:id="67" sofa="1" begin="8" end="10" value="2|Sg|_|Nom"/>
+    <morph:MorphologicalFeatures xmi:id="114" sofa="1" begin="11" end="15" value="2|Sg|_|Acc"/>
+    <morph:MorphologicalFeatures xmi:id="161" sofa="1" begin="16" end="19" value="Def|Masc|Dat|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="208" sofa="1" begin="20" end="29" value="Masc|Dat|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="255" sofa="1" begin="30" end="33" value="Def|Fem|Gen|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="302" sofa="1" begin="34" end="38" value="Fem|Gen|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="349" sofa="1" begin="39" end="56" value="2|Sg|Pres|Ind"/>
+    <morph:MorphologicalFeatures xmi:id="420" sofa="1" begin="59" end="68" value="3|Pl|Pres|_"/>
+    <morph:MorphologicalFeatures xmi:id="467" sofa="1" begin="69" end="72" value="Def|Masc|Nom|Pl"/>
+    <morph:MorphologicalFeatures xmi:id="514" sofa="1" begin="73" end="89" value="Masc|Nom|Pl"/>
+    <morph:MorphologicalFeatures xmi:id="585" sofa="1" begin="94" end="97" value="Def|Masc|Nom|Pl"/>
+    <morph:MorphologicalFeatures xmi:id="632" sofa="1" begin="98" end="111" value="Masc|Nom|Pl"/>
+    <morph:MorphologicalFeatures xmi:id="703" sofa="1" begin="118" end="120" value="Acc"/>
+    <morph:MorphologicalFeatures xmi:id="750" sofa="1" begin="121" end="124" value="Def|Fem|Acc|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="797" sofa="1" begin="125" end="131" value="Fem|Acc|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="916" sofa="1" begin="145" end="148" value="Def|Masc|Nom|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="963" sofa="1" begin="149" end="156" value="Pos|Masc|Nom|Sg|Wk|"/>
+    <morph:MorphologicalFeatures xmi:id="1010" sofa="1" begin="157" end="164" value="Masc|Nom|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="1081" sofa="1" begin="170" end="182" value="Comp|"/>
+    <morph:MorphologicalFeatures xmi:id="1152" sofa="1" begin="187" end="190" value="Acc"/>
+    <morph:MorphologicalFeatures xmi:id="1199" sofa="1" begin="191" end="199" value="Pos|Fem|Acc|Sg|_|"/>
+    <morph:MorphologicalFeatures xmi:id="1246" sofa="1" begin="200" end="211" value="Fem|Acc|Sg"/>
+    <morph:MorphologicalFeatures xmi:id="1293" sofa="1" begin="212" end="225" value="Comp|"/>
+    <morph:MorphologicalFeatures xmi:id="1340" sofa="1" begin="226" end="230" value="3|Sg|Pres|Ind"/>
+    <dependency:Dependency xmi:id="1387" sofa="1" begin="0" end="7" Governor="325" Dependent="19" DependencyType="konj" flavor="basic"/>
+    <dependency:Dependency xmi:id="1395" sofa="1" begin="8" end="10" Governor="325" Dependent="43" DependencyType="subj" flavor="basic"/>
+    <dependency:Dependency xmi:id="1403" sofa="1" begin="11" end="15" Governor="325" Dependent="90" DependencyType="obja" flavor="basic"/>
+    <dependency:Dependency xmi:id="1411" sofa="1" begin="16" end="19" Governor="184" Dependent="137" DependencyType="det" flavor="basic"/>
+    <dependency:Dependency xmi:id="1419" sofa="1" begin="20" end="29" Governor="325" Dependent="184" DependencyType="objd" flavor="basic"/>
+    <dependency:Dependency xmi:id="1427" sofa="1" begin="30" end="33" Governor="278" Dependent="231" DependencyType="det" flavor="basic"/>
+    <dependency:Dependency xmi:id="1435" sofa="1" begin="34" end="38" Governor="184" Dependent="278" DependencyType="gmod" flavor="basic"/>
+    <dependency:Dependency xmi:id="1443" sofa="1" begin="39" end="56" Governor="396" Dependent="325" DependencyType="neb" flavor="basic"/>
+    <dependency:Dependency xmi:id="1467" sofa="1" begin="69" end="72" Governor="490" Dependent="443" DependencyType="det" flavor="basic"/>
+    <dependency:Dependency xmi:id="1616" sofa="1" begin="73" end="89" Governor="537" Dependent="490" DependencyType="CJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1608" sofa="1" begin="90" end="93" Governor="396" Dependent="537" DependencyType="nsubj"/>
+    <dependency:Dependency xmi:id="1475" sofa="1" begin="94" end="97" Governor="608" Dependent="561" DependencyType="det" flavor="basic"/>
+    <dependency:Dependency xmi:id="1483" sofa="1" begin="98" end="111" Governor="537" Dependent="608" DependencyType="CJ" flavor="basic"/>
+    <dependency:Dependency xmi:id="1491" sofa="1" begin="112" end="117" Governor="679" Dependent="655" DependencyType="adv" flavor="basic"/>
+    <dependency:Dependency xmi:id="1499" sofa="1" begin="118" end="120" Governor="396" Dependent="679" DependencyType="PP" flavor="basic"/>
+    <dependency:Dependency xmi:id="1507" sofa="1" begin="121" end="124" Governor="773" Dependent="726" DependencyType="det" flavor="basic"/>
+    <dependency:Dependency xmi:id="1515" sofa="1" begin="125" end="131" Governor="679" Dependent="773" DependencyType="pn" flavor="basic"/>
+    <dependency:Dependency xmi:id="1523" sofa="1" begin="132" end="134" Governor="396" Dependent="820" DependencyType="avz" flavor="basic"/>
+    <dependency:Dependency xmi:id="1539" sofa="1" begin="137" end="144" Governor="1316" Dependent="868" DependencyType="pp" flavor="basic"/>
+    <dependency:Dependency xmi:id="1547" sofa="1" begin="145" end="148" Governor="986" Dependent="892" DependencyType="det" flavor="basic"/>
+    <dependency:Dependency xmi:id="1555" sofa="1" begin="149" end="156" Governor="986" Dependent="939" DependencyType="attr" flavor="basic"/>
+    <dependency:Dependency xmi:id="1563" sofa="1" begin="157" end="164" Governor="1316" Dependent="986" DependencyType="subj" flavor="basic"/>
+    <dependency:Dependency xmi:id="1656" sofa="1" begin="165" end="169" Governor="1057" Dependent="1033" DependencyType="ADV"/>
+    <dependency:Dependency xmi:id="1624" sofa="1" begin="170" end="182" Governor="1104" Dependent="1057" DependencyType="CJ"/>
+    <dependency:Dependency xmi:id="1648" sofa="1" begin="183" end="186" Governor="1316" Dependent="1104" DependencyType="PRED"/>
+    <dependency:Dependency xmi:id="1632" sofa="1" begin="187" end="190" Governor="1269" Dependent="1128" DependencyType="PP"/>
+    <dependency:Dependency xmi:id="1571" sofa="1" begin="191" end="199" Governor="1222" Dependent="1175" DependencyType="attr" flavor="basic"/>
+    <dependency:Dependency xmi:id="1579" sofa="1" begin="200" end="211" Governor="1128" Dependent="1222" DependencyType="pn" flavor="basic"/>
+    <dependency:Dependency xmi:id="1640" sofa="1" begin="212" end="225" Governor="1104" Dependent="1269" DependencyType="CJ"/>
+    <dependency:ROOT xmi:id="1451" sofa="1" begin="57" end="58" Governor="372" Dependent="372" DependencyType="root" flavor="basic"/>
+    <dependency:ROOT xmi:id="1459" sofa="1" begin="59" end="68" Governor="396" Dependent="396" DependencyType="root" flavor="basic"/>
+    <dependency:ROOT xmi:id="1531" sofa="1" begin="135" end="136" Governor="844" Dependent="844" DependencyType="root" flavor="basic"/>
+    <dependency:ROOT xmi:id="1587" sofa="1" begin="226" end="230" Governor="1316" Dependent="1316" DependencyType="root" flavor="basic"/>
+    <dependency:ROOT xmi:id="1595" sofa="1" begin="231" end="232" Governor="1363" Dependent="1363" DependencyType="root" flavor="basic"/>
+    <type5:Sentence xmi:id="1603" sofa="1" begin="0" end="232"/>
+    <type:LayerDefinition xmi:id="1671" name="de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS" uiName="Part of speech"/>
+    <type:LayerDefinition xmi:id="1682" name="de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Lemma" uiName="Lemma"/>
+    <type:LayerDefinition xmi:id="1664" name="de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.MorphologicalFeatures" uiName="Morphological features"/>
+    <type:LayerDefinition xmi:id="1689" name="de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.SurfaceForm" uiName="Surface form"/>
+    <type:LayerDefinition xmi:id="1707" name="de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency" uiName="Dependency"/>
+    <type:LayerDefinition xmi:id="1696" name="de.tudarmstadt.ukp.dkpro.core.api.semantics.type.SemPred" uiName="SemPred"/>
+    <type:FeatureDefinition xmi:id="1718" layer="1707" name="Governor" uiName="Source"/>
+    <type:FeatureDefinition xmi:id="1714" layer="1707" name="Dependent" uiName="Target"/>
+    <type:FeatureDefinition xmi:id="1699" layer="1696" name="arguments" uiName="arguments"/>
+    <type:FeatureDefinition xmi:id="1667" layer="1664" name="value" uiName="Features"/>
+    <type:FeatureDefinition xmi:id="1685" layer="1682" name="value" uiName="Lemma"/>
+    <type:FeatureDefinition xmi:id="1678" layer="1671" name="coarseValue" uiName="UPOS"/>
+    <type:FeatureDefinition xmi:id="1674" layer="1671" name="PosValue" uiName="XPOS"/>
+    <type:FeatureDefinition xmi:id="1692" layer="1689" name="value" uiName="Form"/>
+    <type:FeatureDefinition xmi:id="1703" layer="1696" name="category" uiName="category"/>
+    <type:FeatureDefinition xmi:id="1710" layer="1707" name="DependencyType" uiName="Relation"/>
+    <type3:TagsetDescription xmi:id="1722" sofa="1" begin="0" end="0" layer="de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency" name="Dependenz Labels in ParZu" input="false"/>
+    <type3:TagsetDescription xmi:id="1735" sofa="1" begin="0" end="0" layer="de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.POS" name="STTS for POS Tagging" input="false"/>
+    <cas:Sofa xmi:id="1" sofaNum="1" sofaID="_InitialView" mimeType="text" sofaString="Während du dich dem Höhepunkt der Lust entgegenschraubst , schwellen die Klitorisschenkel und die Schwellkörper rings um die Vagina an , wodurch der gesamte Bereich noch empfindsamer und für sexuelle Stimulation empfänglicher wird .&#10;"/>
+    <cas:View sofa="1" members="8 19 43 90 137 184 231 278 325 372 396 443 490 537 561 608 655 679 726 773 820 844 868 892 939 986 1033 1057 1104 1128 1175 1222 1269 1316 1363 32 56 103 150 197 244 291 338 385 409 456 503 550 574 621 668 692 739 786 833 857 881 905 952 999 1046 1070 1117 1141 1188 1235 1282 1329 1376 37 61 108 155 202 249 296 343 390 414 461 508 555 579 626 673 697 744 791 838 862 886 910 957 1004 1051 1075 1122 1146 1193 1240 1287 1334 1381 67 114 161 208 255 302 349 420 467 514 585 632 703 750 797 916 963 1010 1081 1152 1199 1246 1293 1340 1387 1395 1403 1411 1419 1427 1435 1443 1467 1616 1608 1475 1483 1491 1499 1507 1515 1523 1539 1547 1555 1563 1656 1624 1648 1632 1571 1579 1640 1451 1459 1531 1587 1595 1603 1671 1682 1664 1689 1707 1696 1718 1714 1699 1667 1685 1678 1674 1692 1703 1710 1722 1735"/>
+</xmi:XMI>
