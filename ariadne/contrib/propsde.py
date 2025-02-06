@@ -27,20 +27,23 @@ MORPH_TYPE = "de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.morph.Morphologica
 
 class PropsDESpans(Classifier):
     def predict(self, cas: Cas, layer: str, feature: str, project_id: str, document_id: str, user_id: str):
+        
         # Extract the tokens from the CAS and create a conll from it
         f = open("cas.conll", "w")
         f.write("")
         f.close()
         f = open("cas.conll", "a")
+        # Iterate over each sentence
         for sentence in cas.select(SENTENCE_TYPE):
-            first = True
+            tokens = cas.select_covered(TOKEN_TYPE, sentence)
+            # Make a list with tokens as strings - needed later for dephead token in index conversion
+            tokens_ = [] 
+            for token in tokens:
+                tokens_.append(str(token))
+            #print(tokens_)
+            # Iterate over each token in the sentence, counting from 1 up. Write each property into a variable.
             i = 1
-            for token in cas.select_covered(TOKEN_TYPE, sentence):
-                if first:
-                    #sent_start = int(token.getId()) - 1
-                    first = False
-                i += 1
-                print(token.get_covered_text())
+            for token in tokens:
                 id_ = str(i)
                 text = token.get_covered_text()
                 lemma = cas.select_covered(LEMMA_TYPE, token)[0].value
@@ -52,16 +55,21 @@ class PropsDESpans(Classifier):
                     morph = "_"
                 if cas.select_covered(DEPENDENCY_TYPE, token):
                     dep = cas.select_covered(DEPENDENCY_TYPE, token)[0]
-                    dephead = dep.Governor
+                    dephead_token = dep.Governor
+                    # Lookup the index of our token in the list we made at the top
+                    dephead = tokens_.index(str(dephead_token)) + 1
+                    #print(dephead)
                     deptype = dep.DependencyType
                 else:
                     dephead = "_"
                     deptype = "_"
-                string = "  ".join([id_, text, str(lemma), str(posFine), str(posCoarse), str(morph), str(dephead), str(deptype), "_", "_"])
+                # Make a string with all variables, separated by tabs
+                string = "  ".join([id_, text, str(lemma), str(posCoarse), str(posFine), str(morph), str(dephead), str(deptype), "_", "_"])
                 print(string)
-                
-                f.write(string + "/n")
-            f.write("/n")
+                # Write string into file and increase i
+                f.write(string + "\n")
+                i += 1
+            f.write("\n")
         
         #HIER DIE MAGIE AUS props_from_conll.py einfügen
         
