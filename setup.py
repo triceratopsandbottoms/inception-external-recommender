@@ -28,10 +28,13 @@ DESCRIPTION = "INCEpTION external recommender library in Python"
 HOMEPAGE = "https://inception-project.github.io/"
 EMAIL = "inception-users@googlegroups.com"
 AUTHOR = "The INCEpTION team"
-REQUIRES_PYTHON = ">=3.8.0"
+REQUIRES_PYTHON = ">=3.7.0" #added python 3.7, even though not everything works with 3.7 propably
 
 install_requires = [
-    "flask",
+#added package versions for flask and its dependencies blinker + itsdangerous, so that they are compatible with python3.7
+    "flask==2.2.5",
+    "blinker==1.6",
+    "itsdangerous==2.0",
     "filelock",
     "dkpro-cassis>=0.9.1",
     "joblib",
