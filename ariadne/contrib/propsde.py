@@ -37,7 +37,7 @@ class PropsDEArgSpans(Classifier):
         predSpans = list(filter(lambda span: span.label in ["pred", "predSub"], cas.select(SPAN_TYPE)))
         for span in predSpans:
             token = cas.select_covered(TOKEN_TYPE, span)[0]
-            #print(cas.get_covered_text(token))
+            print("predToken:",cas.get_covered_text(token))
             sentences = list(cas.select(SENTENCE_TYPE))
             sentence = list(cas.select_covering(SENTENCE_TYPE, token))[0]
             #print(cas.get_covered_text(sentence))
@@ -110,7 +110,10 @@ class PropsDEPredSpans(Classifier):
 
 class GeneralProps(Classifier):
     def predict(self, cas: Cas, layer: str, feature: str, project_id: str, document_id: str, user_id: str):
+        i_pred = 0
         for pred in filter(lambda s: s.label == "pred", cas.select(SPAN_TYPE)):
+            #predID = document_id + str("%02d"%i_pred)
+            i_pred += 1
             beg_cChar = pred.begin
             end_cChar = pred.end
             propElems = []
@@ -173,22 +176,22 @@ class GeneralProps(Classifier):
             
             #print("string:", string)
                 
-    def get_enum_elems(cas, span):
-        enumRelations = list(filter(lambda rel: rel.Relation == "enum", cas.select_covered(RELATION_TYPE, span)))
-        #print(enumRelations)
-        if enumRelations != []:
-            enumElems = []
-            for enumRelation in enumRelations:
-                enumElems.append(enumRelation.Dependent)
-            return enumElems
-        else:
-            return None
-        
-    def key_elemType(propElem):
-        elemOrder = ["narg", "farg", "pspez", "gspez"]
-        if propElem[0]:
-            rank = elemOrder.index(propElem[0])
-        return propElem[0] is None, rank
+def get_enum_elems(cas, span):
+    enumRelations = list(filter(lambda rel: rel.Relation == "enum", cas.select_covered(RELATION_TYPE, span)))
+    #print(enumRelations)
+    if enumRelations != []:
+        enumElems = []
+        for enumRelation in enumRelations:
+            enumElems.append(enumRelation.Dependent)
+        return enumElems
+    else:
+        return None
+    
+def key_elemType(propElem):
+    elemOrder = ["zus", "narg", "farg", "pspez", "gspez"]
+    if propElem[0]:
+        rank = elemOrder.index(propElem[0])
+    return propElem[0] is None, rank
                     
 class PropSpanRelations(Classifier):
     def predict(self, cas: Cas, layer: str, feature: str, project_id: str, document_id: str, user_id: str):
@@ -208,28 +211,36 @@ class PropSpanRelations(Classifier):
                 if govSpanLabel == "arg":
                     prediction = create_relation_prediction(cas, layer, feature, govSpan, span, "", auto_accept = True)
                     cas.add(prediction)
-            elif str(span.label).endswith("Elem"):
-                (govSpan, govSpanLabel) = getGovSpanAndLabel(cas, span)
-                if govSpanLabel in ["arg", "argSub", "predSub"]:
-                    label = "enum"
-                    prediction = create_relation_prediction(cas, layer, feature, govSpan, span, label, auto_accept = True)
-                    cas.add(prediction)
+            #elif str(span.label).endswith("Elem"):
+                #govSpanID = int(span.label.replace("Elem", ""))
+                #govSpan = list(filter(lambda s: s.xmiID == govSpanID, cas.select(SPAN_TYPE)))[0]
+                #if govSpan.label in ["arg", "argSub", "predSub"]:
+                #    label = "enum"
+                #    prediction = create_relation_prediction(cas, layer, feature, govSpan, span, label, auto_accept = True)
+                #    cas.add(prediction)
             elif span.label == "arg":
+                #print(cas.get_covered_text(span))
                 govSpanLabel = ""
                 depSpan = span
                 label = ""
                 i = 0
-                while govSpanLabel not in ["pred", ""]:
+                while (i == 0) or (govSpanLabel not in ["pred", None]):
+                    #print("depSpan:", cas.get_covered_text(depSpan))
                     (govSpan, govSpanLabel, depType) = getGovSpanAndLabel(cas, depSpan, getDepType = True)
+                    #print("getGovSpanAndLabel results:", govSpan, "/n", govSpanLabel, "/n", depType)
+                    #if type(govSpan) == TOKEN_TYPE:
                     if i == 0:
                         label = depType
-                    if govSpanLabel == "pred":
-                        prediction = create_relation_prediction(cas, layer, feature, govSpan, span, label, auto_accept = True)
-                        cas.add(prediction)
                     depSpan = govSpan
                     i += 1
+                if govSpanLabel == "pred":
+                    prediction = create_relation_prediction(cas, layer, feature, govSpan, span, label, auto_accept = True)
+                    cas.add(prediction)
 
 def getGovSpanAndLabel(cas, span, getDepType = False):
+    #@span type: SPAN_TYPE or TOKEN_TYPE 
+    #Note: the option to take TOKEN_TYPE as well was implemented after naming variables
+    
     govSpan = None
     label = None
     depType = None
@@ -239,14 +250,40 @@ def getGovSpanAndLabel(cas, span, getDepType = False):
     token_begins = list(map(lambda t: t.begin, tokens))
     #find all (grammatical) dependencies that are (partly) covered in the predSub-span; then filter for the one dependency which has a Governor outside of our span
     deps = cas.select_covered(DEPENDENCY_TYPE, span)
-    dep = list(filter(lambda d: d.Governor.begin not in token_begins, deps))[0]
-    depType = dep.DependencyType
-    govToken = dep.Governor
-    #select the spans in our Governor region and filter the one with the label "pred"
-    govSpanLs = cas.select_covered(SPAN_TYPE, govToken)
-    if govSpanLs != []:
-        govSpan = cas.select_covered(SPAN_TYPE, govToken)[0]
-        label = govSpan.label
+    dep_ = list(filter(lambda d: d.Governor.begin not in token_begins, deps))
+    if dep_ != []:
+        dep = dep_[0]
+        depType = dep.DependencyType
+        govToken = dep.Governor
+        #print("govToken:", govToken)
+        #select the spans in our Governor region and filter the one with the label "pred"
+        govSpanLs = cas.select_covered(SPAN_TYPE, govToken)
+        #print("govSpanLs:", govSpanLs)
+        if govSpanLs != []:
+            govSpan = cas.select_covered(SPAN_TYPE, govToken)[0]
+            label = govSpan.label
+        #else: 
+         #   govSpan = govToken #Implemented after naming the vars. The code works with both TOKEN_TYPE and SPAN_TYPE for govSpan. 
+          #  label = "token"
+    if not govSpan:
+        #print("Find closest predPunctSpan for:", cas.get_covered_text(span))
+        sentence = list(cas.select_covering(SENTENCE_TYPE, span))[0]
+        punctSpans = []
+        for token in cas.select_covered(TOKEN_TYPE, sentence):
+            pos = cas.select_covered(POS_TYPE, token)[0].PosValue
+            if pos.startswith("$"):
+                #print(token)
+                punctSpan = list(cas.select_covered(SPAN_TYPE, token))
+                if punctSpan != [] and punctSpan[0].label == "pred":
+                    punctSpans.append(punctSpan[0])
+        if punctSpans != []:
+            spanPos = (span.begin + span.end) / 2
+            difsToSpan = list(map(lambda s: (s.begin+s.end)/2-spanPos, punctSpans))
+            govSpan = punctSpans[difsToSpan.index(min(difsToSpan))]
+            label = govSpan.label
+        else: 
+            govSpan = None
+            govSpanLabel = None
     if getDepType:
         return (govSpan, label, depType)
     else:
@@ -317,8 +354,8 @@ def runCorzu(input_conll, output):
 
 def predictEnumerations(conll, cas, layer, feature, span):
     #get topNode of the span by looking for the one dependency that has a governor outside of the span -> its dependent is the topNode
-    tokens = cas.select_covered(TOKEN_TYPE, span)
-    span_token_begins = list(map(lambda t: t.begin, tokens))
+    spanTokens = cas.select_covered(TOKEN_TYPE, span)
+    span_token_begins = list(map(lambda t: t.begin, spanTokens))
     deps = cas.select_covered(DEPENDENCY_TYPE, span)
     filtered_deps = list(filter(lambda d: d.Governor.begin not in span_token_begins, deps))
     if len(filtered_deps) == 0:
@@ -331,7 +368,8 @@ def predictEnumerations(conll, cas, layer, feature, span):
     sentences = list(cas.select(SENTENCE_TYPE))
     sentence = list(cas.select_covering(SENTENCE_TYPE, topNode))[0]
     #print(sentence)
-    token_begins = list(map(lambda t: t.begin, cas.select_covered(TOKEN_TYPE, sentence)))
+    sentTokens = cas.select_covered(TOKEN_TYPE, sentence)
+    token_begins = list(map(lambda t: t.begin, sentTokens))
     #print(token_begins)
     #print(topNode.begin)
     tokenIdx = token_begins.index(topNode.begin) + 1
@@ -339,13 +377,18 @@ def predictEnumerations(conll, cas, layer, feature, span):
     enumeration = PropsDE.runPropsDEEnumerations(conll, sentIdx, tokenIdx)
     #print(cas.get_covered_text(span), "enumeration:", enumeration)
     if enumeration:
+        spanID = span.xmiID
         #print("enumeration", enumeration)
         [conjType, totalSpan, elemSpans] = enumeration
         #print(span.begin, span.end)
-        if totalSpan == (span.begin, span.end):
-            #print("generating predictions for elements of span \"", cas.get_covered_text(span), "\"")
-            for elemSpan in elemSpans:
-                span_label = conjType + "Elem"
-                (beg_cChar, end_cChar) = elemSpan
-                prediction = create_prediction(cas, layer, feature, beg_cChar, end_cChar, span_label)
-                cas.add(prediction)
+        #if totalSpan == (span.begin, span.end):
+        #print("generating predictions for elements of span \"", cas.get_covered_text(span), "\"")
+        for elemSpan in elemSpans:
+            (beg_Tok, end_Tok) = elemSpan
+            beg_cChar = sentTokens[beg_Tok-1].begin
+            if beg_cChar < span.begin: beg_cChar = span.begin
+            end_cChar = sentTokens[end_Tok-1].end
+            if end_cChar > span.end: end_cChar = span.end
+            span_label = str(spanID) + "Elem"
+            prediction = create_prediction(cas, layer, feature, beg_cChar, end_cChar, span_label)
+            cas.add(prediction)
