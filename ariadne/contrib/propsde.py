@@ -189,6 +189,7 @@ def get_enum_elems(cas, span):
     
 def key_elemType(propElem):
     elemOrder = ["zus", "narg", "farg", "pspez", "gspez"]
+    rank = 1
     if propElem[0]:
         rank = elemOrder.index(propElem[0])
     return propElem[0] is None, rank
